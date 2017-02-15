@@ -7,9 +7,6 @@
     <script src="js/ajax.js"></script>
     <script src="js/jquery-2.2.3.min(1).js"></script>
     <script src="js/nav.js"></script>
-    <script src="js/angular.js"></script>
-    <script src="js/angular-route.js"></script>
-    <script src="js/swiper.min.js"></script>
     <style>
         body, html {
             background-color: #e8e8e8;
@@ -236,17 +233,11 @@
             margin-top: 15px;
         }
 
-        .wrapper {
-            text-align: center;
-        }
-
         .footer a {
             color: #8f8f8f;
         }
-
-        .footer .lft {
+        .footer .lft{
             float: left;
-            margin-left: 100px;
         }
 
         .footer .rgt {
@@ -268,43 +259,11 @@
             right: -130px;
         }
 
-        .listr .com-title span, .main .listl .com-title span {
-            border-bottom: 3px solid #00AA98;
-            padding-bottom: 7px;
-            font-size: 18px;
-            color: #3C3B3C;
-        }
 
-        .listr .follow .followcon {
-            background-color: #F4F4F4;
-            height: 240px;
-            margin-top: 20px;
-            overflow: hidden;
-            text-align: center;
-            padding-top: 50px;
-        }
-
-        .listr .com-title, .main .listl .com-title {
-            border-bottom: 3px solid #F5F5F5;
-            padding-bottom: 5px;
-            margin-bottom: 5px;
-        }
-        /*分页*/
-        .page{
-            margin:50px auto;
-            width:560px;
-        }
-        .page a{
-            padding: 5px 10px;
-            background-color: #00AA98;
-            color: #fff;
-            font-size: 14px;
-            margin: 0 1px;
-        }
     </style>
 </head>
-<body ng-app="app">
-<div class="all" ng-controller="NavController">
+<body>
+<div class="all">
     <nav>
         <div class="small_all">
             <div class="logo">
@@ -321,10 +280,10 @@
                         <a href="#">观点</a>
                     </strong>
                     <dl>
-                        <dd><a href="#/guandian/1">观点</a></dd>
-                        <dd><a href="#/dianshang/1">电商</a></dd>
-                        <dd><a href="#/chuanmei/1">传媒</a></dd>
-                        <dd><a href="#/tongxin/1">通信</a></dd>
+                        <dd><a href="">观点</a></dd>
+                        <dd><a href="">电商</a></dd>
+                        <dd><a href="">传媒</a></dd>
+                        <dd><a href="">通信</a></dd>
                     </dl>
 
                 </li>
@@ -405,10 +364,11 @@
             </div>
         </div>
     </nav>
+
     <div class="contentWrap">
         <div class="left">
-            <!--<div class="listView">观点</div>-->
-            <ul id="smallDiv" ng-view="">
+            <div class="listView">观点</div>
+            <ul id="smallDiv">
                 <!--<li>-->
                 <!--<div class="imageDiv"></div>-->
                 <!--<h3><a href="http://www.7006.top/view/opinion/720.html">数据库的title</a></h3>-->
@@ -434,7 +394,7 @@
                         <li><a href="javascript:;">日排行</a></li>
                     </ul>
                 </div>
-                <div class="com-title"><span><img src="img/symbol-18.png" alt=""/>排行榜</span></div>
+                <div class="com-title"><span><img src="img/right_house.png" alt=""/>排行榜</span></div>
                 <div class="bd">
                     <ul>
                     </ul>
@@ -452,44 +412,51 @@
             <!-- @广告位_02 -->
             <!--编辑推荐-->
             <div class="recommend">
-                <div class="com-title" style="margin-bottom:10px;"><span><img src="img/symbol-7.png"
+                <div class="com-title" style="margin-bottom:10px;"><span><img src="/style/images/symbol-7.png"
                                                                               alt="编辑推荐"/>编辑推荐</span></div>
                 <ul class="ulfix">
-                    <li><img src="img/1.jpg"
+                    <li><img src="/d/file/news/shouyou/2015-03-28/606f065a8fdbd27d8acc60596312f702.jpg"
                              alt="2015年游戏行业风向标：创业者必须关注的几个方向" width="150" height="98"/>
-                        <p><a href="" target="_blank" title="2015年游戏行业风向标：创业者必须关注的几个方向">2015年游戏行业风向标：创业者必须关</a>
+                        <p><a href="/news/shouyou/461.html" target="_blank" title="2015年游戏行业风向标：创业者必须关注的几个方向">2015年游戏行业风向标：创业者必须关</a>
                         </p>
                     </li>
-                    <li><img src="img/2.jpg"
+                    <li><img src="/d/file/news/shouyou/2015-03-28/f0063b44b52fece4d7a1a7e41be70d48.jpg"
                              alt="山水文化资产遭封 游戏收购恐泡汤" width="150" height="98"/>
-                        <p><a href="" target="_blank" title="山水文化资产遭封 游戏收购恐泡汤">山水文化资产遭封游戏收购恐泡汤</a></p>
+                        <p><a href="/news/shouyou/463.html" target="_blank" title="山水文化资产遭封 游戏收购恐泡汤">山水文化资产遭封
+                            游戏收购恐泡汤</a></p>
                     </li>
-                    <li><img src="img/3.png"
+                    <li><img src="/d/file/news/mobile/2015-03-28/c193341fcbe5ddafed99b9396c343770.png"
                              alt="三星将推Orbis智能手表" width="150" height="98"/>
-                        <p><a href="" target="_blank" title="三星将推Orbis智能手表">三星将推Orbis智能手表</a></p>
+                        <p><a href="/news/mobile/519.html" target="_blank" title="三星将推Orbis智能手表">三星将推Orbis智能手表</a></p>
                     </li>
-                    <li><img src="img/4.jpg"
+                    <li><img src="/d/file/news/mobile/2015-03-28/05679f7d33f1e28eb8d0b93f8c0dc67a.jpg"
                              alt="世界上你没听说过的5款“小不点”手机" width="150" height="98"/>
-                        <p><a href="" target="_blank"
+                        <p><a href="/news/mobile/520.html" target="_blank"
                               title="世界上你没听说过的5款“小不点”手机">世界上你没听说过的5款“小不点”</a></p>
                     </li>
                 </ul>
             </div>
             <!-- 广告位_03-->
             <div class="adimg">
-                <img src="img/right3.gif" alt="“" width="336" height="280"/>
+                <img src="/style/images/imgad2.gif" alt="“" width="336" height="280"/>
             </div>
             <!-- @广告位_03 -->
             <div class="follow">
-                <div class="com-title"><span><img src="img/symbol-5.png" alt=""/>关注我们</span></div>
+                <div class="com-title"><span><img src="/style/images/symbol-5.png" alt=""/>关注我们</span></div>
                 <div class="followcon followcon2">
                     <span>关注微信公众号，了解最新精彩内容</span>
                     <p class="">
-                        <img src="img/qr1.jpg" alt=""/>
-                        <img src="img/qr2.jpg" alt=""/>
+                        <img src="/style/images/qr1.jpg" alt=""/>
+                        <img src="/style/images/qr2.jpg" alt=""/>
                     </p>
                 </div>
             </div>
+        </div>
+
+        <div class="mreturn">
+            <div id="code"></div>
+            <div id="code_img" src="/style/images/qr2.jpg"></div>
+            <a id="gotop"></a>
         </div>
     </div>
 
@@ -504,31 +471,95 @@
                 <span></span><a href="/aboutme/submission.html" target="_blank" title="">投稿须知</a>
                 <span></span><a href="/aboutme/notice.html" target="_blank" title="">版权声明</a>
                 <span></span><a href="/aboutme/sitemap.html" target="_blank" title="">网站地图</a>
+                <span></span>
+                <script src="http://s4.cnzz.com/stat.php?id=1254840138&web_id=1254840138"
+                        language="JavaScript"></script>
             </div>
         </div>
     </div>
+    <!--@网站公共页脚-->
+
 </div>
 </div>
 </body>
-<script>
-    var app = angular.module('app', [
-        'ngRoute',
-        'kexun.guandian',
-        'kexun.dianshang',
-        'kexun.chuanmei',
-        'kexun.tongxin'
-    ]);
-    app.config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.otherwise({
-            redirectTo: '/guandian/1'
-        });
-    }]);
-    app.controller('NavController', ['$scope', function ($scope) {
+<script type="text/javascript">
+    var smallDiv = document.getElementById("smallDiv")
+    ajax("post", "http://localhost/05PHP/%E7%A7%91%E8%AE%AF%E7%BD%91/route.php", "type=1", function (isData) {
+        var isArr = JSON.parse(isData);
+        for (var i = 0; i < isArr.length; i++) {
+            //创建bigDiv  就是那个li
+            var bigDiv = createDiv("li", "bigDiv");
+            smallDiv.appendChild(bigDiv);
+            //图片的div
+            var imageDiv = document.createElement("img");
+            imageDiv.src = isArr[i].img;
+            imageDiv.setAttribute("class", "bigDiv_imageDiv");
+            bigDiv.appendChild(imageDiv);
+            //创建title   h3标签
+            var title = document.createElement("h3");
+            title.setAttribute("class", "bigDiv_title");
+            bigDiv.appendChild(title);
 
-    }]);
+            //h标签里面的a
+            var link = document.createElement("a");
+            link.setAttribute("class", "bigDiv_link");
+            link.innerHTML = isArr[i].title;
+            title.appendChild(link);
+            //内容
+            var content = document.createElement("div");
+            content.setAttribute("class", "bigDiv_content");
+            content.innerHTML = isArr[i].content;
+            bigDiv.appendChild(content);
+
+            //作者
+            var actor = document.createElement("span");
+            actor.setAttribute("class", "bigDiv_actor");
+            actor.innerHTML = isArr[i].actor;
+            bigDiv.appendChild(actor);
+            //时间
+            var time = document.createElement("span");
+            time.setAttribute("class", "bigDiv_time");
+            time.innerHTML = isArr[i].time;
+            bigDiv.appendChild(time);
+
+
+//            //closeDiv.onclick = function(){
+//            //message.removeChild(this.parentNode);
+//            //}
+//            //第二种方法
+//            closeDiv.onclick = (function(bigDiv, date) {
+//                return function() {
+//
+//                    ajax("post", "http://localhost/05PHP/07/%E7%95%99%E8%A8%80%E6%9D%BF%E8%80%81%E5%B8%88/route.php", "type=2&date=" + date, function(noData) {
+//                        var isJson = JSON.parse(noData);
+//                        if(isJson.state == 1) {
+//                            message.removeChild(bigDiv);
+//                        } else {
+//                            alert("删除失败");
+//                        }
+//                    })
+//                }
+//            })(bigDiv, isArr[i].date);
+//            bigDiv.appendChild(closeDiv);
+//            message.insertBefore(bigDiv, message.firstElementChild);
+//            textLimit = 140;
+//            txt.value = "";
+//            userName.value = "";
+        }
+
+    });
+    //创建函数
+    function createDiv(theElement, className) {
+        var newDiv = document.createElement(theElement);
+        newDiv.setAttribute("class", className);
+        return newDiv;
+    }
+    function createDivDiv(txt, className) {
+        var div = document.createElement("div");
+        div.innerHTML = txt;
+        div.setAttribute("class", className);
+        return div;
+    }
+
 </script>
-<script src="guandian/controller.js"></script>
-<script src="dianshang/controller.js"></script>
-<script src="chuanmei/controller.js"></script>
-<script src="tongxin/controller.js"></script>
 </html>

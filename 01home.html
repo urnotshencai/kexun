@@ -2,9 +2,1097 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>科讯网</title>
+    <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <script src="js/jquery-2.2.3.min(1).js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/ajax.js"></script>
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-width: 1200px;
+        }
+
+        a {
+            color: black;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        .top {
+            padding: 0px 350px 0 350px;
+        }
+
+        .topAd {
+            padding: 0 350px;
+            margin-top: 20px;
+            width: 2000px;
+            overflow: hidden;
+        }
+
+        .topAd_1 > img:nth-child(1) {
+            float: left;
+        }
+
+        .topAd_1 > img:nth-child(2) {
+            margin-left: 20px;
+        }
+
+        .topAd_2 > img:nth-child(1) {
+            margin-top: 20px;
+        }
+
+        /*顶部滚动新闻*/
+        .swiper-wrapper {
+            position: relative;
+            font-size: 17px;
+            height: 22px;
+            min-width: 650px;
+            /*overflow: hidden;*/
+        }
+
+        /*轮播图*/
+        .swiper-wrapper_2 {
+            width: 670px;
+            height: 365px;
+        }
+
+        .swiper-slide_3 {
+            width: 130px;
+            height: 85px;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bolder;
+            color: wheat;
+            margin-top: 5px;
+            opacity: 0.6;
+        }
+
+        .swiper-wrapper_3 > div:nth-child(1) {
+            background-color: #2a6496;
+        }
+
+        .swiper-wrapper_3 > div:nth-child(2) {
+            background-color: #5bc0de;
+        }
+
+        .swiper-wrapper_3 > div:nth-child(3) {
+            background-color: #31b0d5;
+        }
+
+        .swiper-wrapper_3 > div:nth-child(4) {
+            background-color: #269abc;
+        }
+
+        .swiper-container_3 {
+            position: absolute;
+            top: 0;
+            left: 680px;
+        }
+
+        /*今日头条手风琴效果*/
+        .accordion {
+            width: 370px;
+            position: absolute;
+            left: 1200px;
+            top: 100px;
+            z-index: 100;
+        }
+
+        .com-title {
+            font-size: 22px;
+        }
+
+        .sideMenu > h3 {
+            border-bottom: 1px solid gray;
+            font-size: 22px;
+        }
+
+        /*精选导读*/
+        .midContent {
+            padding: 0 350px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .intro {
+            margin-top: 20px;
+            width: 820px;
+            height: 385px;
+            padding-top: 25px;
+            /*overflow: hidden;*/
+        }
+
+        .introBox {
+            float: left;
+            width: 385px;
+            height: 87px;
+            background-color: #F1F6F8;
+            padding: 10px;
+            margin-top: 10px;
+            display: inline;
+
+        }
+
+        .com-title > span {
+            border-bottom: 2px solid green;
+        }
+
+        .introImg {
+            float: left;
+            margin-right: 10px;
+            display: inline;
+            width: 130px;
+            height: 85px;
+            margin-top: 20px;
+
+        }
+
+        .introBox > h3 {
+            font-size: 16px;
+            text-align: left;
+        }
+
+        .introBox_r {
+            float: left;
+            width: 385px;
+            height: 87px;
+            background-color: #F1F6F8;
+            padding: 10px;
+            margin-left: 9px;
+            display: inline;
+        }
+
+        /*关注我们*/
+        .focus {
+            position: absolute;
+            top: 0;
+            left: 1200px;
+            margin-top: 10px;
+            height: 385px;
+            padding-top: 18px;
+        }
+
+        .focus > .com-title {
+            border-bottom: 3px solid #F5F5F5;
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+
+        }
+
+        .code {
+            background-color: #F4F4F4;
+
+            height: 335px;
+            width: 320px;
+            margin-top: 12px;
+            overflow: hidden;
+
+        }
+
+        .code > span {
+            display: block;
+            margin: 25px 0;
+            text-align: center;
+            font-size: 16px;
+            color: #4c4c4c;
+        }
+
+        .code > p > img {
+            margin: 0 16px;
+        }
+
+        .awb1 {
+            background: url(img/wb1.png) no-repeat;
+            display: inline-block !important;
+            width: 69px;
+            height: 84px;
+            margin: 10px 20px 0;
+        }
+
+        .awb2 {
+            background: url(img/wb2.png) no-repeat;
+            display: inline-block !important;
+            width: 69px;
+            height: 84px;
+            margin: 10px 20px 0;
+        }
+
+        .asubscription {
+            background: url(img/subscription.png) no-repeat;
+            width: 56px;
+            display: inline-block !important;
+            height: 84px;
+            margin: 10px 20px 0;
+        }
+
+        /*热门推荐*/
+        .midContent_2 {
+            padding: 0 350px;
+            overflow: hidden;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .hotBox {
+            width: 810px;
+            height: 195px;
+            padding: 10px 10px 10px 0;
+            border-bottom: 1px solid #E5E5E5;
+            margin-right: 10px;
+        }
+
+        .hotImg {
+            width: 250px;
+            height: 165px;
+            float: left;
+            display: inline;
+            margin-right: 28px;
+            position: relative;
+        }
+        .hotImg img{
+            width: 250px;
+            height: 125px;
+        }
+        .standpoint {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 68px;
+            height: 30px;
+            font-size: 14px;
+            color: #fff;
+            background-color: #00AA98;
+            text-align: center;
+            line-height: 30px
+        }
+
+        .hotbox > span {
+            margin-right: 20px;
+            display: inline-block !important;
+            text-indent: 20px;
+            color: #3e3e3e;
+        }
+
+        /*推荐阅读*/
+        .slide_r {
+            position: absolute;
+            top: 0;
+            left: 1200px;
+            height: 385px;
+            padding-top: 18px;
+        }
+
+        .readBox {
+            width: 320px;
+        }
+
+        .readTitle {
+            font-size: 16px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .readImg {
+            width: 90px;
+            height: 59px;
+            float: left;
+            display: inline;
+            margin-right: 10px;
+            padding-top: 4px;
+        }
+
+        .readBox > p {
+            color: #696969;
+        }
+
+        /*名家专栏*/
+        .people {
+            margin-top: 25px;
+        }
+
+        .join > a {
+            color: #a5a3a3;
+            float: right;
+            font-size: 14px;
+        }
+
+        .ulfix {
+            width: 320px;
+            height: 370px;
+            padding: 15px 0;
+        }
+
+        .ulfix > li {
+            text-align: center;
+            width: 75px;
+            margin: 0 15px;
+            float: left;
+        }
+
+        /*科技快报*/
+        .tecNews > ul {
+            padding: 5px 0;
+            background: url(img/symbol-12.png) no-repeat 0 15px;
+        }
+
+        .tecNews > ul > li {
+            padding: 5px 0;
+            height: 44px;
+            line-height: 44px;
+            text-indent: 35px;
+            font-size: 14px;
+            border-bottom: 1px solid #F2F4F5;
+        }
+
+        /*品牌展示*/
+        /*合作伙伴*/
+        .bottomAd {
+            padding: 0 350px;
+        }
+
+        .partners {
+            overflow: hidden;
+            width: 1150px;
+        }
+
+        .partnersTitle {
+            background: url(img/partnerstitle.png) no-repeat;
+            width: 1150px;
+            height: 51px;
+            margin-top: 15px;
+        }
+
+        .partnersImg {
+            float: left;
+            border: 1px solid #EEEDED;
+            width: 129px;
+            height: 54px;
+            margin: 20px 6px;
+        }
+
+        .links {
+            overflow: hidden;
+            width: 1150px;
+        }
+
+        .linksTitle {
+            background: url(img/linkstitle.png) no-repeat;
+            width: 1150px;
+            height: 51px;
+            margin-top: 15px;
+        }
+
+        .links > .ulFix > li {
+            float: left;
+            font-size: 14px;
+            margin: 5px 10px;
+        }
+        /*动态创建*/
+        #smallDiv {
+            padding-right: 25px;
+            list-style: none;
+            height: 200px;
+            /*padding-top: 50px;*/
+        }
+
+        .bigDiv {
+            width: 470px;
+            height: 170px;
+            padding: 10px 0;
+            border-bottom: 1px solid #E5E5E5;
+            position: relative;
+            padding-left: 300px;
+            z-index: 2;
+        }
+
+        .bigDiv_imageDiv {
+            position: absolute;
+            top: 10px;
+            left: 0px;
+            width: 250px;
+            height: 165px;
+            background-color: #00AA00;
+            z-index: -10;
+        }
+
+        .bigDiv_title {
+            font-size: 18px;
+            font-weight: bold;
+            height: 35px;
+            line-height: 35px;
+            margin-bottom: 5px;
+        }
+        .bigDiv_link {
+            outline: 0;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .bigDiv_content {
+            color: #3e3e3e;
+            font-size: 14px;
+            height: 102px;
+            line-height: 26px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+        }
+
+        .bigDiv_actor {
+            background: url(img/actor.png) no-repeat;
+            width: 130px;
+            display: inline-block !important;
+            zoom: 1;
+            text-indent: 20px;
+            color: #3e3e3e;
+        }
+
+        .bigDiv_time {
+            width: 130px;
+            background: url(img/time.png) no-repeat;
+            padding-left: 20px;
+        }
+
+    </style>
 </head>
 <body>
+<div id="wrap">
+    <nav>
+        <div class="small_all">
+            <div class="logo">
+                <a href="#">科讯网</a>
+            </div>
+            <ul class="nav_nav">
+                <li>
+                    <strong>
+                        <a href="#">首页</a>
+                    </strong>
+                </li>
+                <li>
+                    <strong>
+                        <a href="#">观点</a>
+                    </strong>
+                    <dl>
+                        <dd><a href="#/guandian/1">观点</a></dd>
+                        <dd><a href="#/dianshang/1">电商</a></dd>
+                        <dd><a href="#/chuanmei/1">传媒</a></dd>
+                        <dd><a href="#/tongxin/1">通信</a></dd>
+                    </dl>
 
+                </li>
+                <li>
+                    <strong>
+                        <a href="#">创投</a>
+                    </strong>
+                    <dl>
+                        <dd><a href="">创业</a></dd>
+                        <dd><a href="">人物</a></dd>
+                        <dd><a href="">金融</a></dd>
+                        <dd><a href="">投资</a></dd>
+                    </dl>
+
+                </li>
+                <li>
+                    <strong>
+                        <a href="#">商业</a>
+                    </strong>
+                    <dl>
+                        <dd><a href="">商业</a></dd>
+                        <dd><a href="">案例</a></dd>
+                    </dl>
+
+                </li>
+                <li>
+                    <strong>
+                        <a href="#">智客</a>
+                    </strong>
+                    <dl>
+                        <dd><a href="">精选</a></dd>
+                        <dd><a href="">评测</a></dd>
+                    </dl>
+
+                </li>
+                <li>
+                    <strong>
+                        <a href="#">快报</a>
+                    </strong>
+                    <dl>
+                        <dd><a href="">业界</a></dd>
+                        <dd><a href="">手机</a></dd>
+                        <dd><a href="">家电</a></dd>
+                        <dd><a href="">手游</a></dd>
+                        <dd><a href="">运营</a></dd>
+                        <dd><a href="">即时</a></dd>
+                    </dl>
+
+                </li>
+                <li>
+                    <strong>
+                        <a href="#">更多</a>
+                    </strong>
+                    <dl>
+                        <dd><a href="">滚动新闻</a></dd>
+                        <dd><a href="">聚合标签</a></dd>
+                        <dd><a href="">排行榜</a></dd>
+                    </dl>
+
+                </li>
+            </ul>
+            <div class="leg">
+                <a href="" class="contribute">投稿</a>
+                <div class="user">
+                    <div class="userBar">
+                        <span class="user_logo"><img src="img/symbol-25.png" alt=""></span>
+                        <a href="">账户</a>
+                        <ul class="drap">
+                            <li class="i1">
+                                <a href="">注册</a>
+                            </li>
+                            <li class="i2">
+                                <a href="">登录</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--滚动-->
+    <div class="top">
+        <!--滚动信息-->
+        <div class="swiper-container">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                    <img src="img/symbol-1.png" alt="一切产业都是媒体，企业自媒体正在风起云涌"/><a href="#" target="_blank">Notel：朝鲜流行的中国造播放器，能偷看韩剧</a>
+                    <img src="img/symbol-1.png" alt="一切产业都是媒体，企业自媒体正在风起云涌"/><a href="#"
+                                                                               target="_blank">5G网有望在2020年准备就绪</a>
+                </li>
+                <li class="swiper-slide">
+                    <img src="img/symbol-1.png" alt="一切产业都是媒体，企业自媒体正在风起云涌"/><a href="#" target="_blank">Notel：朝鲜流行的中国造播放器，能偷看韩剧</a>
+                    <img src="img/symbol-1.png" alt="一切产业都是媒体，企业自媒体正在风起云涌"/><a href="#"
+                                                                               target="_blank">5G网有望在2020年准备就绪</a>
+                </li>
+                <li class="swiper-slide">
+                    <img src="img/symbol-1.png" alt="一切产业都是媒体，企业自媒体正在风起云涌"/><a href="#"
+                                                                               target="_blank">美国人的生活里大数据都改变了什么？</a>
+                    <img src="img/symbol-1.png" alt="一切产业都是媒体，企业自媒体正在风起云涌"/><a href="#" target="_blank">“互联网+”：最好的时代
+                    or 最坏的时代</a>
+                </li>
+                <li class="swiper-slide">
+                    <img src="img/symbol-1.png" alt="一切产业都是媒体，企业自媒体正在风起云涌"/><a href="#" target="_blank">旧手机，你们都去哪了？</a>
+                    <img src="img/symbol-1.png" alt="一切产业都是媒体，企业自媒体正在风起云涌"/><a href="#"
+                                                                               target="_blank">沃尔沃在北京高速上进行无人驾驶测试</a>
+                </li>
+            </ul>
+        </div>
+
+        <!--轮播图-->
+        <div class="swiper-container swiper-container_2">
+            <!--左侧大图-->
+            <div class="swiper-wrapper swiper-wrapper_2">
+                <div class="swiper-slide">
+                    <img src="img/e8b145230d480caab9878fa665d1e96a.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/da58e2faca45f87be541e957295bd792.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/084bd9fcdbbe1742387819da96e879e7.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/5b39914316a2b88ab3f03011eafacd3f.jpg" alt="">
+                </div>
+            </div>
+            <!--右侧小图-->
+            <div class="swiper-container swiper-container_3">
+                <div class="swiper-wrapper_3">
+                    <div class="swiper-slide swiper-slide_3">莆田系与百度内讧</div>
+                    <div class="swiper-slide swiper-slide_3">马云威胁国家安全</div>
+                    <div class="swiper-slide swiper-slide_3">中国互联网新革命</div>
+                    <div class="swiper-slide swiper-slide_3">互联网让中国经济腾飞</div>
+                </div>
+            </div>
+        </div>
+        <!--今日头条-->
+        <div class="newsr accordion">
+            <div class="topnews">
+                <div class="com-title"><span><img src="img/symbol-3.png" alt=""/>今日头条</span></div>
+                <div class="sideMenu" style="margin:0 auto">
+                    <h3 class="h3img1"><a href="#" target="_blank" title="血仍未冷历久而新，一个纸媒逃兵的自我救赎">血仍未冷历久而新，一个纸媒逃兵的</a>
+                    </h3>
+                    <ul>
+                        <li> 有人说我是个纸媒逃兵，OK，I don&#039;t
+                            care。事实也的确如此，两年前的仲夏当我走进报社人事处上缴伴随自己12年的记者证时，内心一度纠结成团，原本战斗力满满的生活似乎要刹那被抽...
+                        </li>
+                    </ul>
+                    <h3 class="h3img2"><a href="#" target="_blank" title="Windows 10免费的背后：微软有颗骚动的心">Windows
+                        10免费的背后：微软有颗骚</a></h3>
+                    <ul>
+                        <li> 这几天不管是在科技网站、微博还是微信朋友圈，我们都被微软Windows
+                            10将免费升级的消息所淹没。如果只是针对正版用户升级，尚且不会闹得路人皆知，关键是盗版用户也可升级！甚...
+                        </li>
+                    </ul>
+                    <h3 class="h3img3"><a href="#" target="_blank" title="看巨头齐聚IT领袖峰会，云计算才是未来新风口">看巨头齐聚IT领袖峰会，云计算才是</a>
+                    </h3>
+                    <ul>
+                        <li> 这一次的IT领袖峰会又如期在深圳举行了，大佬们围绕未来下一个风口在哪儿进行了激烈的讨论。从去年开始，&amp;ldquo;风口论&amp;rdquo;和&amp;ldquo;猪论&amp;rdquo;就在互联网圈内流行起来...</li>
+                    </ul>
+                    <h3 class="h3img4"><a href="#" target="_blank" title="华强北的转型之路：互联网浪潮的裹挟中寻求突破">华强北的转型之路：互联网浪潮的裹</a>
+                    </h3>
+                    <ul>
+                        <li> 华强北曾是中国电子市场的风向标，也是全球电子产品制造中心和世界最大的电子元器件集散中心。如今，电商的冲击让华强北遭遇整改搬迁之痛，它也被最大的&amp;ldquo;山寨&amp;rdquo;手...</li>
+                    </ul>
+
+
+                    <h3 class="h3img5 on"><a href="#" target="_blank"
+                                             title="发展战略级的概念，“互联网+”最终+的还是人">发展战略级的概念，“互联网+”最</a>
+                    </h3>
+                    <ul>
+                        <li> 自从互联网诞生的那一刻开始，就预示着互联网能够改变一切。互联网在军用局域网阶段的时候，人们肯定没想过互联网发展到最后会是万物互联的状态。估计前人们也没想过当时的...</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--广告-->
+    <div class="topAd">
+        <div class="topAd_1"><img src="img/index_v3.jpg" alt="">
+            <img src="img/img3.jpg" alt=""></div>
+        <div class="topAd_2"><img src="img/index_index_001.jpg" alt=""></div>
+    </div>
+    <!--中间内容-->
+    <div class="midContent">
+        <!--精选导读-->
+        <div class="intro">
+            <div class="com-title"><span><img src="img/symbol-4.png" alt="">精选导读</span></div>
+            <div class="introBox">
+                <div class="introImg"><a href="#" title="开炮，全球首款小游戏社交APP正式上线" target="_blank"><img
+                        src="img/c0787f3a1fe29c07f9ccd86b7c474fb7.jpg" alt="开炮，全球首款小游戏社交APP正式上线" width="130"
+                        height="85"></a></div>
+                <h3><a href="#" title="开炮，全球首款小游戏社交APP正式上线" target="_blank">开炮，全球首款小游戏社交APP正式上线</a></h3>
+                <p>由鲲磐网络自主研发的全球首款小游戏社交APP“开炮”正式上线，将陌生人社交...</p>
+                <p><span></span></p>
+            </div>
+            <div class="introBox introBox_r">
+                <div class="introImg"><a href="#" title="阿里内部反腐，处罚贿赂淘宝小二的26家店铺" target="_blank"><img
+                        src="img/1a133e94ab7a0e6de2c5cbc10a3e7dac.jpg" alt="阿里内部反腐，处罚贿赂淘宝小二的26家店铺" width="130"
+                        height="85"></a></div>
+                <h3><a href="#" title="阿里内部反腐，处罚贿赂淘宝小二的26家店铺" target="_blank">阿里内部反腐，处罚贿赂淘宝小二的26家店铺</a></h3>
+                <p> 阿里巴巴今天公布了对26家店铺的处罚决定，由于涉嫌不正当谋利，这26家店铺将...</p>
+                <p><span></span></p>
+            </div>
+            <div class="introBox ">
+                <div class="introImg"><a href="#" title="迪士尼涉足虚拟体育游戏，胜算几何？" target="_blank"><img
+                        src="img/cebdf800c8cd6b6bac7df519f57c192e.jpg" alt="迪士尼涉足虚拟体育游戏，胜算几何？" width="130" height="85"></a>
+                </div>
+                <h3><a href="#" title="迪士尼涉足虚拟体育游戏，胜算几何？" target="_blank">迪士尼涉足虚拟体育游戏，胜算几何？</a></h3>
+                <p> 以动画片起家的迪士尼，将触角伸到了在线虚拟体育游戏。近日，据美国《财富》(...</p>
+                <p><span></span></p>
+            </div>
+            <div class="introBox introBox_r">
+                <div class="introImg"><a href="#" title="阿里内部反腐，处罚贿赂淘宝小二的26家店铺" target="_blank"><img
+                        src="img/1a133e94ab7a0e6de2c5cbc10a3e7dac.jpg" alt="阿里内部反腐，处罚贿赂淘宝小二的26家店铺" width="130"
+                        height="85"></a></div>
+                <h3><a href="#" title="阿里内部反腐，处罚贿赂淘宝小二的26家店铺" target="_blank">阿里内部反腐，处罚贿赂淘宝小二的26家店铺</a></h3>
+                <p> 阿里巴巴今天公布了对26家店铺的处罚决定，由于涉嫌不正当谋利，这26家店铺将...</p>
+                <p><span></span></p>
+            </div>
+            <div class="introBox">
+                <div class="introImg"><a href="#" title="开炮，全球首款小游戏社交APP正式上线" target="_blank"><img
+                        src="img/c0787f3a1fe29c07f9ccd86b7c474fb7.jpg" alt="开炮，全球首款小游戏社交APP正式上线" width="130"
+                        height="85"></a></div>
+                <h3><a href="#" title="开炮，全球首款小游戏社交APP正式上线" target="_blank">开炮，全球首款小游戏社交APP正式上线</a></h3>
+                <p>由鲲磐网络自主研发的全球首款小游戏社交APP“开炮”正式上线，将陌生人社交...</p>
+                <p><span></span></p>
+            </div>
+            <div class="introBox introBox_r">
+                <div class="introImg"><a href="#" title="阿里内部反腐，处罚贿赂淘宝小二的26家店铺" target="_blank"><img
+                        src="img/1a133e94ab7a0e6de2c5cbc10a3e7dac.jpg" alt="阿里内部反腐，处罚贿赂淘宝小二的26家店铺" width="130"
+                        height="85"></a></div>
+                <h3><a href="#" title="阿里内部反腐，处罚贿赂淘宝小二的26家店铺" target="_blank">阿里内部反腐，处罚贿赂淘宝小二的26家店铺</a></h3>
+                <p> 阿里巴巴今天公布了对26家店铺的处罚决定，由于涉嫌不正当谋利，这26家店铺将...</p>
+                <p><span></span></p>
+            </div>
+        </div>
+        <!--关注我们-->
+        <div class="focus">
+            <div class="com-title"><span><img src="img/symbol-5.png" alt="">关注我们</span></div>
+            <div class="code"><span>关注微信公众号，了解最新精彩内容</span>
+                <p class=""><img src="img/qr1.jpg" alt=""> <img src="img/qr2.jpg" alt=""></p>
+                <a href="" class="awb1"></a><a href="" class="awb2"></a><a href="" class="asubscription"></a></div>
+        </div>
+    </div>
+
+    <div class="midContent_2">
+        <ul class="hot" id="smallDiv">
+            <div class="com-title"><span><img src="img/symbol-6.png" alt="">热门推荐</span></div>
+            <!--<li class="hotBox">-->
+            <!--<div class="hotImg">-->
+            <!--<div class="hotimgzz"></div>-->
+            <!--<img src="img/7313d9b30a9045fbd2a235054259439a.jpg" alt="谷歌推出“智能锁”功能，安全性如何保证？" width="250"-->
+            <!--height="165">-->
+            <!--<div class="standpoint">手机</div>-->
+            <!--<a class="zzsz" href="#" target="_blank" title="谷歌推出“智能锁”功能，安全性如何保证？"></a>-->
+            <!--</div>-->
+            <!--<h3><a href="#">谷歌推出“智能锁”功能，安全性如何保证？</a></h3>-->
+            <!--<p> 3月23日消息, 据国外媒体报道, 谷歌推出新的Android&amp;ldquo;智能锁&amp;rdquo;功能。这一功能利用移动设备的加速度计判断设备所处的...</p>-->
+            <!--<span>作者：阿虎</span><span>2015-03-28 12:44</span>-->
+            <!--</li>-->
+        </ul>
+        <div class="slide_r">
+            <div class="read">
+                <div class="com-title"><span><img src="img/symbol-3.png" alt="阅读推荐">阅读推荐</span></div>
+
+                <div class="readBox">
+                    <div class="readTitle"><a href="#" target="_blank" title="ZOL卖15亿，垂直网媒的未来在哪里">ZOL卖15亿，垂直网媒的未来在哪里</a>
+                    </div>
+                    <div class="readImg"><a href="#" target="_blank" title="ZOL卖15亿，垂直网媒的未来在哪里"><img
+                            src="img/a1cba3cb62c9e9a7fd18c4739658cb12.jpg" alt="" width="90" height="59"></a></div>
+                    <p> 3月18日早上，一条小消息，撩拨着行业媒体的大神经。今天早上，慧聪网发布公告称，已经与IT垂直门户....</p>
+                </div>
+                <div class="readBox">
+                    <div class="readTitle"><a href="#" target="_blank" title="“纸”在削减，“媒”何以不死？">“纸”在削减，“媒”何以不死？</a></div>
+                    <div class="readImg"><a href="#" target="_blank" title="“纸”在削减，“媒”何以不死？"><img
+                            src="img/1baa76596314c31cc38e2ce65040a569.jpg" alt="" width="90" height="59"></a></div>
+                    <p>过去的一年时间里，很多纸媒依然没有熬过“寒冬”。“当下最具有互联网思维的杂志”《壹读》近日业....</p>
+                </div>
+                <div class="readBox">
+                    <div class="readTitle"><a href="#" target="_blank"
+                                              title="《穹顶之下》：人们为什么开始质疑柴静？">《穹顶之下》：人们为什么开始质疑柴静</a></div>
+                    <div class="readImg"><a href="#" target="_blank" title="《穹顶之下》：人们为什么开始质疑柴静？"><img
+                            src="img/acc54145b4a487e3d101cffd93526b64.jpg" alt="" width="90" height="59"></a></div>
+                    <p> 导语:相信在刚刚过去的周末，人们的微博和朋友圈都被柴静和她的《苍穹之下》所刷屏。两会前期，....</p>
+                </div>
+                <div class="readBox">
+                    <div class="readTitle"><a href="#" target="_blank" title="没几把刷子，请不要玩自媒体">没几把刷子，请不要玩自媒体</a></div>
+                    <div class="readImg"><a href="#" target="_blank" title="没几把刷子，请不要玩自媒体"><img
+                            src="img/a9498f4e647eee9b682ac38b52992447.jpg" alt="" width="90" height="59"></a></div>
+                    <p> 方雨在不同场合分享过自媒体的运营之道。最近不少朋友求教方雨自媒体如何玩起来，这里做个简单....</p>
+                </div>
+            </div>
+            <div class="ad_r">
+                <img src="img/index_v4.jpg" alt="">
+            </div>
+            <div class="people">
+                <div class="columnAuthor">
+                    <div class="com-title">
+                        <div class="join"><a href="/">在这与他们同行</a></div>
+                        <span><img src="img/symbol-3.png" alt="">名家专栏</span></div>
+                    <ul class="ulfix">
+                        <li>
+                            <div class="authorimg"><a href="#" target="_blank" title="马云"><img src="img/e1.jpg"
+                                                                                               class="thumb" alt=""
+                                                                                               width="73"
+                                                                                               height="73"></a></div>
+                            <p>马云</p>
+                        </li>
+                        <li>
+                            <div class="authorimg"><a href="#" target="_blank" title="马化腾"><img src="img/e2.jpg"
+                                                                                                class="thumb" alt=""
+                                                                                                width="73" height="73"></a>
+                            </div>
+                            <p>马化腾</p>
+                        </li>
+                        <li>
+                            <div class="authorimg"><a href="#" target="_blank" title="李彦宏"><img src="img/e3.jpg"
+                                                                                                class="thumb" alt=""
+                                                                                                width="73" height="73"></a>
+                            </div>
+                            <p>李彦宏</p>
+                        </li>
+                        <li>
+                            <div class="authorimg"><a href="#" target="_blank" title="刘强东"><img src="img/e4.jpg"
+                                                                                                class="thumb" alt=""
+                                                                                                width="73" height="73"></a>
+                            </div>
+                            <p>刘强东</p>
+                        </li>
+                        <li>
+                            <div class="authorimg"><a href="#" target="_blank" title="丁磊"><img src="img/e5.jpg"
+                                                                                               class="thumb" alt=""
+                                                                                               width="73"
+                                                                                               height="73"></a></div>
+                            <p>丁磊</p>
+                        </li>
+                        <li>
+                            <div class="authorimg"><a href="#" target="_blank" title="张朝阳"><img src="img/e6.jpg"
+                                                                                                class="thumb" alt=""
+                                                                                                width="73" height="73"></a>
+                            </div>
+                            <p>张朝阳</p>
+                        </li>
+                        <li>
+                            <div class="authorimg"><a href="#" target="_blank" title="陈天桥"><img src="img/e7.jpg"
+                                                                                                class="thumb" alt=""
+                                                                                                width="73" height="73"></a>
+                            </div>
+                            <p>陈天桥</p>
+                        </li>
+                        <li>
+                            <div class="authorimg"><a href="#" target="_blank" title="周鸿祎"><img src="img/e8.jpg"
+                                                                                                class="thumb" alt=""
+                                                                                                width="73" height="73"></a>
+                            </div>
+                            <p>周鸿祎</p>
+                        </li>
+                        <li>
+                            <div class="authorimg"><a href="#" target="_blank" title="雷军"><img src="img/e9.jpg"
+                                                                                               class="thumb" alt=""
+                                                                                               width="73"
+                                                                                               height="73"></a></div>
+                            <p>雷军</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tecNews">
+                <div class="com-title"><span><img src="img/symbol-13.png" alt="">科技快报</span></div>
+                <ul>
+                    <li><a href="#" target="_blank">Notel：朝鲜流行的中国造播放器，能偷</a></li>
+                    <li><a href="#" target="_blank">5G网有望在2020年准备就绪</a></li>
+                    <li><a href="#" target="_blank">Notel：朝鲜流行的中国造播放器，能偷</a></li>
+                    <li><a href="#" target="_blank">5G网有望在2020年准备就绪</a></li>
+                    <li><a href="#" target="_blank">美国人的生活里大数据都改变了什么</a></li>
+                    <li><a href="#" target="_blank">“互联网+”：最好的时代 or 最坏的</a></li>
+
+                </ul>
+            </div>
+            <div class="brand">
+                <div class="com-title"><span><img src="img/symbol-5.png" alt="">品牌展示</span></div>
+                <div class="brandImg">
+                    <img src="img/index_v5.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottomAd">
+        <!--合作伙伴-->
+        <div class="partners">
+            <div class="partnersTitle"></div>
+            <div class="partnersImg"><a href=""><img src="img/link_logo1.jpg" alt=""></a></div>
+            <div class="partnersImg"><a href=""><img src="img/link_logo2.jpg" alt=""></a></div>
+            <div class="partnersImg"><a href=""><img src="img/link_logo3.jpg" alt=""></a></div>
+            <div class="partnersImg"><a href=""><img src="img/link_logo4.jpg" alt=""></a></div>
+            <div class="partnersImg"><a href=""><img src="img/link_logo5.jpg" alt=""></a></div>
+            <div class="partnersImg"><a href=""><img src="img/link_logo6.jpg" alt=""></a></div>
+            <div class="partnersImg"><a href=""><img src="img/link_logo7.jpg" alt=""></a></div>
+            <div class="partnersImg"><a href=""><img src="img/link_logo8.jpg" alt=""></a></div>
+
+        </div>
+        <!--友情链接-->
+        <div class="links">
+            <div class="linksTitle"></div>
+            <ul class="ulFix">
+                <li><a href="http://it.sohu.com/" target="_blank">搜狐IT</a></li>
+                <li><a href="http://tech.sina.com.cn/" target="_blank">新浪科技</a></li>
+                <li><a href="http://www.stdaily.com/" target="_blank">中国科技网</a></li>
+                <li><a href="http://tech.qq.com/" target="_blank">腾讯科技</a></li>
+                <li><a href="http://tech.ifeng.com/" target="_blank">凤凰科技</a></li>
+                <li><a href="http://tech.163.com/" target="_blank">网易</a></li>
+                <li><a href="http://www.newhua.com/" target="_blank">牛华网</a></li>
+                <li><a href="http://news.ittime.com.cn/" target="_blank">IT时代周刊</a></li>
+                <li><a href="http://www.techxinwen.com/" target="_blank">科技资讯网</a></li>
+                <li><a href="http://science.china.com.cn/" target="_blank">科学中国</a></li>
+                <li><a href="http://news.iresearch.cn/" target="_blank">艾瑞网</a></li>
+                <li><a href="http://www.techweb.com.cn" target="_blank">TechWeb</a></li>
+                <li><a href="http://tech.hexun.com/" target="_blank">和讯科技</a></li>
+                <li><a href="http://tech.gmw.cn/" target="_blank">光明科技</a></li>
+                <li><a href="http://www.student.gov.cn/" target="_blank">学生科技网</a></li>
+                <li><a href="http://it.msn.com.cn/" target="_blank">MSN中国科技频道</a></li>
+                <li><a href="http://www.huxiu.com/" target="_blank">虎嗅网</a></li>
+                <li><a href="http://www.guancha.cn/" target="_blank">观察者网</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--页脚-->
+    <div class="footer">
+        <div class="wrapper">
+            <div class="lft">© 2013-2015 科讯网（www.7006.top）版权所有 备案：皖ICP备15010744号</div>
+            <div class="rgt"><a href="/aboutme/" target="_blank" title="">关于我们</a>
+                <span></span><a href="/aboutme/contact.html" target="_blank" title="">联系我们</a>
+                <span></span><a href="/aboutme/cooperation.html" target="_blank" title="">商务合作</a>
+                <span></span><a href="/aboutme/report.html" target="_blank" title="">寻求报道</a>
+                <span></span><a href="/aboutme/submission.html" target="_blank" title="">投稿须知</a>
+                <span></span><a href="/aboutme/notice.html" target="_blank" title="">版权声明</a>
+                <span></span><a href="/aboutme/sitemap.html" target="_blank" title="">网站地图</a>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
+
+
+<script type="text/javascript">
+    $(function () {
+        //滚动新闻
+        var swiper = new Swiper('.swiper-container', {
+            direction: 'vertical',
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: 3000,
+            autoplayDisableOnInteraction: false,
+            loop: true
+        });
+
+        // 大图轮播
+        var swiper_2 = new Swiper('.swiper-container_2', {
+            direction: 'vertical',
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: 2000,
+            autoplayDisableOnInteraction: false,
+            loop: true
+        });
+        //    小图透明度改变
+        setInterval(function () {
+            $(".swiper-wrapper_3>div:nth-child(1)").css('opacity', '1');
+            $(".swiper-wrapper_3>div:nth-child(2)").css('opacity', '0.6');
+            $(".swiper-wrapper_3>div:nth-child(3)").css('opacity', '0.6');
+            $(".swiper-wrapper_3>div:nth-child(4)").css('opacity', '0.6');
+        }, 2000);
+        setInterval(function () {
+            $(".swiper-wrapper_3>div:nth-child(1)").css('opacity', '0.6');
+            $(".swiper-wrapper_3>div:nth-child(2)").css('opacity', '1');
+            $(".swiper-wrapper_3>div:nth-child(3)").css('opacity', '0.6');
+            $(".swiper-wrapper_3>div:nth-child(4)").css('opacity', '0.6');
+        }, 4000);
+
+        setInterval(function () {
+            $(".swiper-wrapper_3>div:nth-child(1)").css('opacity', '0.6');
+            $(".swiper-wrapper_3>div:nth-child(2)").css('opacity', '0.6');
+            $(".swiper-wrapper_3>div:nth-child(3)").css('opacity', '1');
+            $(".swiper-wrapper_3>div:nth-child(4)").css('opacity', '0.6');
+        }, 6000);
+        setInterval(function () {
+            $(".swiper-wrapper_3>div:nth-child(1)").css('opacity', '0.6');
+            $(".swiper-wrapper_3>div:nth-child(2)").css('opacity', '0.6');
+            $(".swiper-wrapper_3>div:nth-child(3)").css('opacity', '0.6');
+            $(".swiper-wrapper_3>div:nth-child(4)").css('opacity', '1');
+        }, 8000);
+
+//    今日头条
+        (function () {
+            var sideMenu = $("div.sideMenu");
+            if (sideMenu == "undefined") return;
+            var h3 = sideMenu.find("h3");
+            var ul = sideMenu.find("ul");
+            var activeNum = 0;	//	当前触发 num
+            var isAct = true;		//	动画是否执行完毕
+            ul.hide(500);
+            avtive(4);
+            h3.each(function (i) {
+                (function (i) {
+                    h3.eq(i).mouseenter(function () {
+                        if (activeNum == i) return;
+                        avtive(i);
+                    });
+                })(i)
+            });
+            function avtive(num) {
+                if (!isAct) return;
+                isAct = false;
+                ul.eq(num).slideDown("normal");
+                ul.eq(activeNum).slideUp("normal", function () {
+                    isAct = true;
+                });
+                activeNum = num;
+            }
+        })();
+
+//精选导读
+        $(".introBox").each(function () {
+            $(".introBox > h3").mouseover(function () {
+                $(this).css('background-color', '#00AA98');
+            });
+            $(".introBox > h3").mouseout(function () {
+                $(this).css('background-color', '');
+            });
+        });
+    });
+
+    //热门推荐
+    $('.hotBox > h3').each(function () {
+        $('.hotBox > h3 > a').mouseover(function () {
+            $(this).css('color', '#00AA98');
+        });
+        $(".hotBox > h3 > a").mouseout(function () {
+            $(this).css('color', '');
+        });
+    });
+    //ajax获取数据
+    var smallDiv = document.getElementById("smallDiv");
+    ajax("get", "http://localhost/05PHP/kexun/homeSelect.php","type=1", function (isData) {
+        var isArr = JSON.parse(isData);
+        console.log(isData);
+        for (var i = 0; i < isArr.length; i++) {
+            //创建bigDiv  就是那个li
+            var bigDiv = createDiv("li", "hotBox");
+            smallDiv.appendChild(bigDiv);
+            //hotImg
+            var hotImg = createDiv("div", "hotImg");
+            bigDiv.appendChild(hotImg);
+            //image
+            var imageDiv = document.createElement("img");
+            imageDiv.src = isArr[i].img;
+            hotImg.appendChild(imageDiv);
+            //standpoint
+            var standpoint = createDiv("div", "standpoint");
+            standpoint.innerHTML = "手机";
+            hotImg.appendChild(standpoint);
+            //创建title   h3标签
+            var title = document.createElement("h3");
+            title.setAttribute("class", "bigDiv_title");
+            bigDiv.appendChild(title);
+            //h标签里面的a
+            var link = document.createElement("a");
+            link.setAttribute("class", "bigDiv_link");
+            link.innerHTML = isArr[i].title;
+            link.href = isArr[i].link;
+            title.appendChild(link);
+            //内容
+            var content = document.createElement("span");
+            content.setAttribute("class", "bigDiv_content");
+            content.innerHTML = isArr[i].content;
+            bigDiv.appendChild(content);
+
+            //作者
+            var actor = document.createElement("span");
+            actor.setAttribute("class", "bigDiv_actor");
+            actor.innerHTML = isArr[i].actor;
+            bigDiv.appendChild(actor);
+            //时间
+            var time = document.createElement("span");
+            time.setAttribute("class", "bigDiv_time");
+            time.innerHTML = isArr[i].time;
+            bigDiv.appendChild(time);
+        }
+
+    });
+    //创建函数
+    function createDiv(theElement, className) {
+        var newDiv = document.createElement(theElement);
+        newDiv.setAttribute("class", className);
+        return newDiv;
+    }
+    function createDivDiv(txt, className) {
+        var div = document.createElement("div");
+        div.innerHTML = txt;
+        div.setAttribute("class", className);
+        return div;
+    }
+</script>
 </html>
