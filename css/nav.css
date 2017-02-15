@@ -166,3 +166,48 @@ nav{
 .change{
     background-color: #00AA98;
 }
+<<<<<<< HEAD
+=======
+/*页脚*/
+.footer {
+    height: 54px;
+    line-height: 54px;
+    background: #3E3E3E;
+    color: #fff;
+    font-size: 14px;
+    color: #8f8f8f;
+    margin-top: 15px;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.footer a {
+    color: #8f8f8f;
+}
+
+.footer .lft {
+    float: left;
+    margin-left: 300px;
+}
+
+.footer .rgt {
+
+    position: relative;
+}
+
+.footer .rgt span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 5px;
+}
+
+.footer .rgt .cmstoplogo {
+    position: absolute;
+    top: 3px;
+    right: -130px;
+}
+>>>>>>> 34384fd3ffdf4a3811b471089b59878db5b65e7b

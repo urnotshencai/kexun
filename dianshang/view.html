@@ -1,0 +1,22 @@
+<!--<div class="contentWrap">-->
+<div class="left">
+    <div class="listView">电商</div>
+    <ul id="smallDiv" ng-repeat="item in items">
+        <li class="bigDiv">
+            <img src={{item.img}} alt="" class="bigDiv_imageDiv">
+            <div class="imageDiv"></div>
+            <h3 class="bigDiv_title"><a class="bigDiv_link" href="http://www.7006.top/view/opinion/720.html">{{item.title}}</a></h3>
+            <p class="bigDiv_content">{{item.content}}</p>
+            <span class="bigDiv_actor">{{item.actor}}</span>
+            <span class="bigDiv_time">{{item.time}}</span>
+        </li>
+    </ul>
+    <div class="page">
+        <a ng-click="go(0)">1</a>
+        <a ng-click="go(1)">2</a>
+        <a ng-click="go(2)">3</a>
+        <a ng-click="nextPage(currentPage + 1)">下一页</a>
+    </div>
+</div>
+
+<!--</div>-->
