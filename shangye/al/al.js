@@ -1,15 +1,16 @@
-var module = angular.module('kexun.chuanmei', [
+var module = angular.module('shangye.al', [
     'ngRoute'
 ]);
 module.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.when('/chuanmei/:page', {
-        templateUrl: 'chuanmei/view.html',
-        controller: 'chuanmeiController'
+    $routeProvider.when('/shangye/al/:page', {
+        templateUrl: 'shangye/al/anli.html',
+        controller: 'alController2'
     });
 }]);
-module.controller('chuanmeiController',["$scope","$http","$routeParams","$route",function ($scope,$http,$routeParams,$route) {
-    $http.get('http://localhost/05PHP/kexun/route.php?type=3')
+module.controller('alController2',["$scope","$http","$routeParams","$route",function ($scope,$http,$routeParams,$route) {
+    $http.get('http://localhost/05PHP/kexun/shangye/al/select.php?type=1')
         .success(function(data){
+            console.log("123467894616846165")
             $scope.items = data;
             var page = parseInt($routeParams.page);
             var dataArr = [];

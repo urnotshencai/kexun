@@ -11,7 +11,7 @@ if ($mysqli->connect_errno){
     die($mysqli->connect_error);
 }
 $mysqli->query("set names utf8");
-$sql = "SELECT * FROM kexun_02guandian LIMIT 18,28";
+$sql = "SELECT * FROM kexun_02guandian ORDER BY id DESC LIMIT 18,28";
 $result = $mysqli->query($sql);
 $arr = $result->fetch_all(MYSQLI_ASSOC);
 $mysqli->close();

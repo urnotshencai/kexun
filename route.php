@@ -14,6 +14,9 @@ switch ($type){
     case 4:
         require_once "select4.php";
         break;
+    case 5:
+        require_once "add.php";
+        break;
     default:
         break;
 }

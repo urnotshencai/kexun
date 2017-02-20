@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-2.2.3.min(1).js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        font{
+            font-size: 9px;
+        }
+        .head{
+            width: 956px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        a{
+            text-decoration: none;
+            font-size: 12px;
+        }
+        div{
+            font-size: 12px;
+        }
+        .head img{
+            width: 397px;
+        }
+        .hello{
+            display: inline-block;
+            position: relative;
+            line-height: 20px;
+            top:-20px;
+        }
+        .right{
+            float: right;
+            margin-top: 28px;
+        }
+        .bg1{
+            width: 100%;
+            height: 6px;
+            background-color: rgb(0, 170, 152);
+        }
+        .headAfter{
+            padding: 10px 0;
+            font-size: 13px;
+            width: 956px;
+            margin: 0 auto;
+        }
+        .middle{
+            width: 956px;
+            margin: 0 auto;
+            overflow: hidden;
+            border: 1px solid #bafbf4;
+            min-height: 200px;
+        }
+        .middleLeft{
+            width: 20%;
+            padding-top: 10px;
+            float: left;
+        }
+        .middleLeft1 a{
+            color: white;
+        }
+        .middleLeft1{
+            width: 90%;
+            margin: 0 auto;
+            background-color: rgb(0, 170, 152);
+            border: 1px solid white;
+            height: 30px;
+            line-height: 30px;
+            cursor:pointer
+        }
+        .left{
+            display: none;
+        }
+        .left a{
+            display: block;
+            color: black;
+            margin: 2px 25px;
+        }
+        .middleRight{
+            width: 79%;
+            border-left: 1px solid #BAFBF4;
+            float: left;
+            padding-top: 10px;
+            padding-bottom: 12px;
+        }
+        #middleRight_log{
+            width: 100%;
+
+            margin: 0 auto;
+        }
+        #middleRight_log .table1{
+            width: 500px;
+            display: none;
+            border: 1px solid rgb(0, 170, 152);
+            margin:0 auto;
+        }
+        #middleRight_log .table1 table{
+            width: 500px;
+            border: 1px solid #BAFBF4;
+            border-collapse: collapse;
+        }
+        #middleRight_log .table1 td{
+            height: 25px;
+        }
+        #table2{
+            width:95%;
+            margin:0 auto;
+            border:1px solid #BAFBF4;
+            display: none;
+        }
+        .header{
+            font: 9pt Tahoma, Verdana;
+            color: #FFFFFF;
+            font-weight: bold;
+            background-color: #00AA98;
+        }
+        tbody {
+            display: table-row-group;
+            vertical-align: middle;
+            border-color: inherit;
+        }
+        table{
+            border-color: #BAFBF4;
+        }
+    </style>
+</head>
+<body>
+<div class="all">
+    <div class="head">
+        <img src="http://www.7006.top/skin/member/images/logo.jpg" alt="">
+        <div class="hello">您好,<strong>游客</strong>
+            <br><a href="">[马上注册</a >丨<a href="">注册账号]</a >
+        </div>
+        <div class="right"><a href="">网站首页</a >|<a href="">会员中心</a >|<a href="">会员列表</a ></div>
+    </div>
+    <div class="bg1"></div>
+    <div class="headAfter">当前位置: <a href="">首页</a > > <a href="">会员中心</a > > 选择注册会员类型</div>
+    <div class="middle">
+        <div class="middleLeft">
+            <div class="middleLeft1"><img src="http://www.7006.top/skin/member/images/add.gif" alt="" ><a>账号</a ></div>
+            <div class="left"><a href="###" class="a1">会员登录</a ><a href="###" class="a1">注册账号</a ></div>
+            <div class="middleLeft1"><img src="http://www.7006.top/skin/member/images/add.gif" alt="" ><a>投稿</a ></div>
+            <div class="left"><a href="###" class="a1">发布新闻</a ></div>
+            <div class="middleLeft1"><img src="http://www.7006.top/skin/member/images/add.gif" alt="" ><a>商城</a ></div>
+            <div class="left"><a href="###" class="a1">我的购物车</a ></div>
+        </div>
+        <div class="middleRight">
+            <div id="middleRight_log">
+                <div class="table1">
+                    <table border="1" cellspacing="0" >
+                        <tr><th colspan="3" style="width: 100%">会员登录</th></tr>
+                        <tr>
+                            <td style="width: 25%">用户名</td>
+                            <td style="width: 75%"><input type="text" id="userName" style="width: 192px"></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 25%">密码</td>
+                            <td style="width: 75%"><input type="password" id="passWord" style="width: 192px"></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 25%">保存时间</td>
+                            <td style="width: 75%">
+                                <input type="radio" name="radio" value="1">不保存
+                                <input type="radio" name="radio" value="2">一小时
+                                <input type="radio" name="radio" value="3">一天
+                                <input type="radio" name="radio" value="4">一个月
+                                <input type="radio" name="radio" value="5">永久
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 25%"></td>
+                            <td style="width: 75%"><input type="button" id="btn" value="登录">
+                                <input type="button" value="马上注册" id="ms">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="table1">
+                    <table border="1" cellspacing="0">
+                        <tr>
+                            <th  style="height: 25px;background-color: rgb(0, 170, 152);color: white">选择注册会员类型</th>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" name="radio" value="1">普通会员</td>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" name="radio" value="2">企业会员</td>
+                        </tr>
+                        <tr><td><input type="button" value="下一步" id="xia"></td></tr>
+                    </table>
+                </div>
+                <div class="table1" id="table3">
+                    你好,游客
+                    <table>
+                        <tr><th style="background-color: rgb(0, 170, 152);color: white" height="20px">请选择要增加信息的栏目</th></tr>
+                        <tr><td><select name="classid" size="22" style="width:300px">
+                            <option value="1">|-观点</option>
+                            <option value="2" style="background:#99C4E3">&nbsp;&nbsp;|-观点</option>
+                            <option value="3" style="background:#99C4E3">&nbsp;&nbsp;|-电商</option>
+                            <option value="4" style="background:#99C4E3">&nbsp;&nbsp;|-传媒</option>
+                            <option value="5" style="background:#99C4E3">&nbsp;&nbsp;|-通信</option>
+                            <option value="6">|-创投</option>
+                            <option value="7" style="background:#99C4E3">&nbsp;&nbsp;|-创业</option>
+                            <option value="8" style="background:#99C4E3">&nbsp;&nbsp;|-人物</option>
+                            <option value="9" style="background:#99C4E3">&nbsp;&nbsp;|-金融</option>
+                            <option value="10" style="background:#99C4E3">&nbsp;&nbsp;|-投资</option>
+                            <option value="11">|-商业</option>
+                            <option value="12" style="background:#99C4E3">&nbsp;&nbsp;|-商业</option>
+                            <option value="13" style="background:#99C4E3">&nbsp;&nbsp;|-案例</option>
+                            <option value="14">|-智客</option>
+                            <option value="15" style="background:#99C4E3">&nbsp;&nbsp;|-精选</option>
+                            <option value="16" style="background:#99C4E3">&nbsp;&nbsp;|-评测</option>
+                        </select></td></tr>
+                        <tr><td><input type="submit" id='tianjia' value="添加信息"><font color="#666666">(请选择终极栏目[蓝色条])</font></td></tr>
+                    </table>
+                </div>
+                <div class="table1">
+                    <td width="80%" height="420" valign="top" bgcolor="#FFFFFF">
+                        <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" class="tableborder">
+                            <form name="userinfoform" method="post" enctype="multipart/form-data" action="../doaction.php"></form>
+                            <input type="hidden" name="enews" value="register">
+                            <tbody><tr class="header">
+                                <td height="25" colspan="2">注册会员</td>
+                            </tr>
+                            <tr>
+                                <td height="25" colspan="2"><strong>基本信息
+                                    <input name="groupid" type="hidden" id="groupid" value="1">
+                                    <input name="tobind" type="hidden" id="tobind" value="0">
+                                </strong></td>
+                            </tr>
+                            <tr>
+                                <td width="25%" height="25" bgcolor="#FFFFFF"> <div align="left">用户名</div></td>
+                                <td width="75%" height="25" bgcolor="#FFFFFF"> <input name="username" type="text" id="username1" maxlength="30">
+                                    *</td>
+                            </tr>
+                            <tr>
+                                <td height="25" bgcolor="#FFFFFF"> <div align="left">密码</div></td>
+                                <td height="25" bgcolor="#FFFFFF"> <input name="password" type="password" id="password1" maxlength="20">
+                                    *</td>
+                            </tr>
+                            <tr>
+                                <td height="25" bgcolor="#FFFFFF"> <div align="left">重复密码</div></td>
+                                <td height="25" bgcolor="#FFFFFF"> <input name="repassword" type="password" id="repassword" maxlength="20">
+                                    *</td>
+                            </tr>
+                            <tr>
+                                <td height="25" bgcolor="#FFFFFF"> <div align="left">邮箱</div></td>
+                                <td height="25" bgcolor="#FFFFFF"> <input name="email" type="text" id="email" maxlength="50">
+                                    *</td>
+                            </tr>
+                            <tr>
+                                <td height="25" colspan="2"><strong>其他信息</strong></td>
+                            </tr>
+                            <tr>
+                                <td height="25" colspan="2" bgcolor="#FFFFFF">
+                                    <table width="100%" align="center" cellpadding="3" cellspacing="1" bgcolor="#DBEAF5">
+                                        <tbody><tr><td width="25%" height="25" bgcolor="ffffff">真实姓名</td><td bgcolor="ffffff">
+                                            <input name="truename" type="text" id="truename" value="">
+                                        </td></tr>
+                                        <tr><td width="16%" height="25" bgcolor="ffffff">QQ号码</td><td bgcolor="ffffff"><input name="oicq" type="text" id="oicq" value="">
+                                        </td></tr>
+                                        <tr><td width="16%" height="25" bgcolor="ffffff">MSN</td><td bgcolor="ffffff"><input name="msn" type="text" id="msn" value="">
+                                        </td></tr>
+                                        <tr><td width="16%" height="25" bgcolor="ffffff">联系电话</td><td bgcolor="ffffff"><input name="mycall" type="text" id="mycall" value="">
+                                        </td></tr>
+                                        <tr><td width="16%" height="25" bgcolor="ffffff">手机</td><td bgcolor="ffffff"><input name="phone" type="text" id="phone" value="">
+                                        </td></tr>
+                                        <tr><td width="16%" height="25" bgcolor="ffffff">网站地址</td><td bgcolor="ffffff">
+                                            <input name="homepage" type="text" id="homepage" value="">
+                                        </td></tr>
+                                        <tr><td width="16%" height="25" bgcolor="ffffff">会员头像</td><td bgcolor="ffffff"><input type="file" name="userpicfile">&nbsp;&nbsp;
+                                        </td></tr>
+                                        <tr><td width="16%" height="25" bgcolor="ffffff">联系地址</td><td bgcolor="ffffff"><input name="address" type="text" id="address" value="" size="50">
+                                            &nbsp;邮编: <input name="zip" type="text" id="zip" value="" size="8">
+                                        </td></tr>
+                                        <tr><td width="16%" height="25" bgcolor="ffffff">个人介绍</td><td bgcolor="ffffff"><textarea name="saytext" cols="65" rows="10" id="saytext"></textarea>
+                                        </td></tr>
+                                        </tbody></table>      </td>
+                            </tr>
+                            <tr>
+                                <td height="25" bgcolor="#FFFFFF">&nbsp;</td>
+                                <td height="25" bgcolor="#FFFFFF"> <input type="submit" name="Submit" id="btn1" value="马上注册">
+                                    &nbsp;&nbsp; <input type="button" name="Submit2" value="返回" onclick="history.go(-1)"></td>
+                            </tr>
+                            <tr bgcolor="#FFFFFF">
+                                <td height="25" colspan="2">说明：带*项为必填。</td>
+                            </tr>
+                            </tbody></table>
+                    </td>
+                </div>
+                <div id="table2">
+                    <form action="" name="">
+                        <table width="100%" border="1"  align="center" cellpadding="0" cellspacing="0" class="tableborder">
+                            <tbody>
+                            <tr class="header">
+                                <td height="25" colspan="2">添加信息</td>
+                            </tr>
+                            <tr >
+                                <td>提交者</td>
+                                <td>游客</td>
+                            </tr>
+                            <tr >
+                                <td width="16%">栏目</td>
+                                <td>
+                                    <a href="##">观点</a>
+                                    &nbsp;>&nbsp;
+                                    <a href="##">电商</a>
+                                    &nbsp;[
+                                    <a href="#">重新选择</a>
+                                    ]
+                                </td>
+                            </tr>
+                            </tbody>
+
+                        </table>
+                        <table width="100%" border="1" align="center" cellpadding="3" cellspacing="0" class="tableborder">
+                            <tbody>
+                            <tr>
+                                <td width="16%" height="25">标题(*)</td>
+                                <td><input type="text" size="42" id="title"></td>
+                            </tr>
+                            <tr>
+                                <td width="16%" height="25">副标题</td>
+                                <td><input type="text" size="42" id="title_fu"></td>
+                            </tr>
+                            <tr>
+                                <td width="16%" height="25">关键字</td>
+                                <td><input type="text" size="42" name="title"><font color="#666666">(多个请用","隔开)</font></td>
+                            </tr>
+                            <tr>
+                                <td width="16%" height="25">标题图片</td>
+                                <td><input type="file" id="img" size="45"></td>
+                            </tr>
+                            <tr>
+                                <td width="16%" height="25">内容简介</td>
+                                <td><textarea name="smalltext" cols="60" rows="10" id="smalltext"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td width="16%" height="25">作者</td>
+                                <td><input name="writer" type="text" id="actor" value="" size=""></td>
+                            </tr>
+                            <tr>
+                                <td width="16%" height="25">信息来源</td>
+                                <td><input name="writer" type="text" id="writer" value="" size=""></td>
+                            </tr>
+                            <tr>
+                                <td height="25" colspan="2" bgcolor="ffffff"><div align="left" id="content">新闻正文(*)</div></td>
+                            </tr>
+                            <tr>
+                                <td width="100%" height="300" colspan="2">
+                                    <textarea name="" id="" cols="116" rows="20"></textarea>
+                                </td>
+                            </tr>
+                            <tr class="header">
+                                <td width="16%">&nbsp;</td>
+                                <td><input type="submit" name="addnews" value="提交"> <input type="reset" name="Submit2" value="重置"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    var middleLeft1 = document.getElementsByClassName('middleLeft1');
+    var table2 = document.getElementById('table2');
+    var table3 = document.getElementById('table3');
+    var options  = document.getElementsByTagName('option');
+    var tianjia = document.getElementById('tianjia')
+    var left = document.getElementsByClassName('left');
+    var ms = document.getElementById('ms');
+    var table1 = document.getElementsByClassName('table1')
+    var a1 = document.getElementsByClassName('a1')
+    var xia = document.getElementById('xia')
+    var bool1 = false;
+    var bool2 = false;
+    var bool3 = false;
+    for (var i=0;i<middleLeft1.length;i++){
+        middleLeft1[i].index = i;
+        middleLeft1[i].onclick = function () {
+            for (var j=0;j<left.length;j++){
+                left[j].style.display = 'none'
+            }
+            left[this.index].style.display = 'block';
+        }
+    }
+
+    for (var i= 0;i<options.length;i++){
+        options[i].onclick = function () {
+
+        };
+    }
+    tianjia.onclick = function () {
+        console.log(1111)
+        table2.style.display = 'block';
+        table3.style.display = 'none';
+    };
+    ms.onclick = function () {
+        for (var i=0;i<table1.length;i++){
+            table1[i].style.display='none'
+        }
+        table1[1].style.display='block'
+    }
+    xia.onclick = function () {
+        for (var i=0;i<table1.length;i++){
+            table1[i].style.display='none'
+        }
+        table1[3].style.display='block'
+    }
+    for (var i=0;i<a1.length;i++){
+        a1[i].index = i
+        a1[i].onclick = function () {
+            for (var j=0;j<table1.length;j++){
+                table1[j].style.display = 'none'
+            }
+            table1[this.index].style.display = 'block'
+        }
+    }
+    var userName = document.getElementById("userName");
+    var passWord = document.getElementById("passWord");
+    var oBtn = document.getElementById("btn");
+    oBtn.onclick = function () {
+        if (userName.value !="" && passWord != ""){
+            ajax("post","http://http://localhost/lianxi/kexun/02logReg.php","userName="+userName.value+"&passWord="+passWord.value+"&type=1",function (data) {
+                var isJson = JSON.parse(data);
+                if (isJson.state == 1){
+
+                }else {
+
+                }
+            })
+        }else {
+            alert("账号密码不能为空");
+        }
+    }
+    var userName1 = document.getElementById("username1");
+    var passWord1 = document.getElementById("password1");
+    var oBtn1 = document.getElementById("btn1");
+    var isEmail = document.getElementById("email");
+    var passWordAgain = document.getElementById("repassword");
+    oBtn1.onclick = function () {
+        if (userName1.value != "" && passWord1.value != "" && passWordAgain.value !=""&&isEmail.value !=""){
+            if (passWord.value == passWordAgain.value){
+                ajax("post","http://localhost/lianxi/kexun/02logReg.php","userName="+userName.value+"&passWord="+passWord.value+"&email="+isEmail.value+"&passWordAgain="+passWordAgain.value+"&type=0",function (data) {
+                    var isJson = JSON.parse(data);
+                    if (isJson.state == 3){
+                        alert('成功')
+                    }else{
+                        oDiv.innerHTML = isJson.error;
+                    }
+                });
+            }else {
+                alert("两次密码不一致")
+            }
+        }else {
+            alert("账号,密码,用户名不能为空");
+        }
+    }
+</script>
+</html>

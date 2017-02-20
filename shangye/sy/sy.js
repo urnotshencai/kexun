@@ -1,15 +1,16 @@
-var module = angular.module('kexun.chuanmei', [
+var module = angular.module('shangye.sy', [
     'ngRoute'
 ]);
 module.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.when('/chuanmei/:page', {
-        templateUrl: 'chuanmei/view.html',
-        controller: 'chuanmeiController'
+    $routeProvider.when('/shangye/sy/:page', {
+        templateUrl: 'shangye/sy/shangye.html',
+        controller: 'alController'
     });
 }]);
-module.controller('chuanmeiController',["$scope","$http","$routeParams","$route",function ($scope,$http,$routeParams,$route) {
-    $http.get('http://localhost/05PHP/kexun/route.php?type=3')
+module.controller('alController',["$scope","$http","$routeParams","$route",function ($scope,$http,$routeParams,$route) {
+    $http.get('http://localhost/05PHP/kexun/shangye/sy/select.php?type=2')
         .success(function(data){
+            console.log(data);
             $scope.items = data;
             var page = parseInt($routeParams.page);
             var dataArr = [];
@@ -26,18 +27,13 @@ module.controller('chuanmeiController',["$scope","$http","$routeParams","$route"
                 }
                 $scope.items = dataArr;
                 $scope.currentPage = page;
-                $scope.onePage = false;
             }
             $scope.go = function (page) {
                 switch (page){
                     case 0:
-                        console.log($scope.onePage);
-                        if ($scope.onePage){
-                            console.log("aa");
-                            changePage(page);
-                            $route.updateParams({page:page});
-                            break;
-                        }
+                        changePage(page);
+                        $route.updateParams({page:page});
+                        break;
                     case 1:
                         changePage(page);
                         $route.updateParams({page:page});

@@ -1,14 +1,14 @@
-var module = angular.module('kexun.chuanmei', [
+var module = angular.module('zhike.cp', [
     'ngRoute'
 ]);
 module.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.when('/chuanmei/:page', {
-        templateUrl: 'chuanmei/view.html',
-        controller: 'chuanmeiController'
+    $routeProvider.when('/zhike/cp/:page', {
+        templateUrl: 'zhike/cp/ceping.html',
+        controller: 'alController'
     });
 }]);
-module.controller('chuanmeiController',["$scope","$http","$routeParams","$route",function ($scope,$http,$routeParams,$route) {
-    $http.get('http://localhost/05PHP/kexun/route.php?type=3')
+module.controller('alController',["$scope","$http","$routeParams","$route",function ($scope,$http,$routeParams,$route) {
+    $http.get('http://localhost/05PHP/kexun/zhike/cp/select.php')
         .success(function(data){
             $scope.items = data;
             var page = parseInt($routeParams.page);

@@ -1,15 +1,24 @@
-var module = angular.module('kexun.chuanmei', [
+var module = angular.module('kexun.renwu', [
     'ngRoute'
 ]);
 module.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.when('/chuanmei/:page', {
-        templateUrl: 'chuanmei/view.html',
-        controller: 'chuanmeiController'
+    $routeProvider.when('/renwu/:page', {
+        templateUrl: 'renwu/view.html',
+        controller: 'renwuController'
     });
 }]);
-module.controller('chuanmeiController',["$scope","$http","$routeParams","$route",function ($scope,$http,$routeParams,$route) {
-    $http.get('http://localhost/05PHP/kexun/route.php?type=3')
-        .success(function(data){
+module.controller('renwuController',["$scope","$http",'$routeParams','$route',function ($scope,$http,$routeParams,$route) {
+    $scope.subjects = [];
+    var count = 10;
+    var page = parseInt($routeParams.page);
+    var start = (page - 1) * count;
+    //当前是第几页
+    $scope.currentPage = page;
+    console.log(page)
+    //总页数
+    $scope.totalPage = 0;
+    $http.get("http://localhost/05PHP/kexun/route03.php?type=2")
+        .success(function (data) {
             $scope.items = data;
             var page = parseInt($routeParams.page);
             var dataArr = [];
@@ -17,11 +26,11 @@ module.controller('chuanmeiController',["$scope","$http","$routeParams","$route"
             changePage(page);
             function changePage(page) {
                 if (page < 2){
-                    du = (page + 1) * 5
+                    du = (page + 1) * 10
                 }else {
                     du = data.length;
                 }
-                for (var i = page * 5;i < du;i++){
+                for (var i = page * 10;i < du;i++){
                     dataArr.push(data[i]);
                 }
                 $scope.items = dataArr;
@@ -55,5 +64,6 @@ module.controller('chuanmeiController',["$scope","$http","$routeParams","$route"
                     $route.updateParams({page:page});
                 }
             }
-        })
+        }
+    )
 }]);

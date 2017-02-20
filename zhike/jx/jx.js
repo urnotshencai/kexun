@@ -1,15 +1,16 @@
-var module = angular.module('kexun.chuanmei', [
+var module = angular.module('zhike.jx', [
     'ngRoute'
 ]);
 module.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.when('/chuanmei/:page', {
-        templateUrl: 'chuanmei/view.html',
-        controller: 'chuanmeiController'
+    $routeProvider.when('/zhike/jx/:page', {
+        templateUrl: 'zhike/jx/jingxuan.html',
+        controller: 'aController'
     });
 }]);
-module.controller('chuanmeiController',["$scope","$http","$routeParams","$route",function ($scope,$http,$routeParams,$route) {
-    $http.get('http://localhost/05PHP/kexun/route.php?type=3')
+module.controller('aController',["$scope","$http","$routeParams","$route",function ($scope,$http,$routeParams,$route) {
+    $http.get('http://localhost/05PHP/kexun/zhike/jx/select.php')
         .success(function(data){
+            console.log(data)
             $scope.items = data;
             var page = parseInt($routeParams.page);
             var dataArr = [];
@@ -57,3 +58,5 @@ module.controller('chuanmeiController',["$scope","$http","$routeParams","$route"
             }
         })
 }]);
+
+

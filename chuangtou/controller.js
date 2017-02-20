@@ -1,15 +1,15 @@
-var module = angular.module('kexun.chuanmei', [
+var module = angular.module('kexun.chuangtou', [
     'ngRoute'
 ]);
 module.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.when('/chuanmei/:page', {
-        templateUrl: 'chuanmei/view.html',
-        controller: 'chuanmeiController'
+    $routeProvider.when('/chuangtou/:page', {
+        templateUrl: 'chuangtou/view.html',
+        controller: 'chuangtouController'
     });
 }]);
-module.controller('chuanmeiController',["$scope","$http","$routeParams","$route",function ($scope,$http,$routeParams,$route) {
-    $http.get('http://localhost/05PHP/kexun/route.php?type=3')
-        .success(function(data){
+module.controller('chuangtouController',["$scope","$http",'$routeParams','$route',function ($scope,$http,$routeParams,$route) {
+    $http.get("http://localhost/05PHP/kexun/route03.php?type=1")
+        .success(function (data) {
             $scope.items = data;
             var page = parseInt($routeParams.page);
             var dataArr = [];
@@ -17,11 +17,11 @@ module.controller('chuanmeiController',["$scope","$http","$routeParams","$route"
             changePage(page);
             function changePage(page) {
                 if (page < 2){
-                    du = (page + 1) * 5
+                    du = (page + 1) * 10
                 }else {
                     du = data.length;
                 }
-                for (var i = page * 5;i < du;i++){
+                for (var i = page * 10;i < du;i++){
                     dataArr.push(data[i]);
                 }
                 $scope.items = dataArr;

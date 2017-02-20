@@ -30,7 +30,7 @@
         }
 
         .top {
-            padding: 0px 350px 0 350px;
+            padding: 80px 350px 0 350px;
         }
 
         .topAd {
@@ -114,10 +114,21 @@
         }
 
         .sideMenu > h3 {
-            border-bottom: 1px solid gray;
-            font-size: 22px;
+            border-bottom: 1px solid lightgrey;
+            font-size: 16px;
+            line-height: 40px;
         }
-
+        .sideMenu > ul > li {
+            text-indent: 2em;
+            height: 85px;
+            margin-bottom: 10px;
+            margin-top: 5px;
+            overflow: hidden;
+            width: 279px;
+            margin-left: 15px;
+            color: #929090;
+            font-size: 14px;
+        }
         /*精选导读*/
         .midContent {
             padding: 0 350px;
@@ -154,7 +165,6 @@
             display: inline;
             width: 130px;
             height: 85px;
-            margin-top: 20px;
 
         }
 
@@ -478,50 +488,50 @@
             <ul class="nav_nav">
                 <li>
                     <strong>
-                        <a href="#">首页</a>
+                        <a href="01home.html">首页</a>
                     </strong>
                 </li>
                 <li>
                     <strong>
-                        <a href="#">观点</a>
+                        <a href="02.html">观点</a>
                     </strong>
                     <dl>
-                        <dd><a href="#/guandian/1">观点</a></dd>
-                        <dd><a href="#/dianshang/1">电商</a></dd>
-                        <dd><a href="#/chuanmei/1">传媒</a></dd>
-                        <dd><a href="#/tongxin/1">通信</a></dd>
+                        <dd><a href="#/guandian/0">观点</a></dd>
+                        <dd><a href="#/dianshang/0">电商</a></dd>
+                        <dd><a href="#/chuanmei/0">传媒</a></dd>
+                        <dd><a href="#/tongxin/0">通信</a></dd>
                     </dl>
 
                 </li>
                 <li>
                     <strong>
-                        <a href="#">创投</a>
+                        <a href="03.html">创投</a>
                     </strong>
                     <dl>
-                        <dd><a href="">创业</a></dd>
-                        <dd><a href="">人物</a></dd>
-                        <dd><a href="">金融</a></dd>
-                        <dd><a href="">投资</a></dd>
+                        <dd><a href="#/chuangye/0">创业</a></dd>
+                        <dd><a href="#/renwu/0">人物</a></dd>
+                        <dd><a href="#">金融</a></dd>
+                        <dd><a href="#">投资</a></dd>
                     </dl>
 
                 </li>
                 <li>
                     <strong>
-                        <a href="#">商业</a>
+                        <a href="04.html">商业</a>
                     </strong>
                     <dl>
-                        <dd><a href="">商业</a></dd>
-                        <dd><a href="">案例</a></dd>
+                        <dd><a href="#/shangye/sy/0">商业</a></dd>
+                        <dd><a href="#/shangye/al/0">案例</a></dd>
                     </dl>
 
                 </li>
                 <li>
                     <strong>
-                        <a href="#">智客</a>
+                        <a href="05.html">智客</a>
                     </strong>
                     <dl>
-                        <dd><a href="">精选</a></dd>
-                        <dd><a href="">评测</a></dd>
+                        <dd><a href="#/zhike/jx/0">精选</a></dd>
+                        <dd><a href="#/zhike/cp/0">评测</a></dd>
                     </dl>
 
                 </li>
@@ -559,10 +569,10 @@
                         <a href="">账户</a>
                         <ul class="drap">
                             <li class="i1">
-                                <a href="">注册</a>
+                                <a href="log.html">注册</a>
                             </li>
                             <li class="i2">
-                                <a href="">登录</a>
+                                <a href="log.html">登录</a>
                             </li>
                         </ul>
                     </div>
@@ -671,7 +681,7 @@
     <!--广告-->
     <div class="topAd">
         <div class="topAd_1"><img src="img/index_v3.jpg" alt="">
-            <img src="img/img3.jpg" alt=""></div>
+            <img src="img/img2.jpg" alt=""></div>
         <div class="topAd_2"><img src="img/index_index_001.jpg" alt=""></div>
     </div>
     <!--中间内容-->
@@ -1087,12 +1097,6 @@
         var newDiv = document.createElement(theElement);
         newDiv.setAttribute("class", className);
         return newDiv;
-    }
-    function createDivDiv(txt, className) {
-        var div = document.createElement("div");
-        div.innerHTML = txt;
-        div.setAttribute("class", className);
-        return div;
     }
 </script>
 </html>
