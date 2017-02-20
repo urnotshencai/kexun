@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+        li{
+            list-style: none;
+        }
+        a {
+            outline: 0;
+            text-decoration: none;
+        }
+        .daohang{
+            background-color: #3e3e3e;
+            height:37px;
+            position: fixed;
+            z-index: 1000;
+            top:0;
+            left:0;
+            width: 100%;
+        }
+        .dh{
+            width:1200px;
+            height:100%;
+            margin:0 auto;
+            position: relative;
+        }
+        .dh_left{
+            float: left;
+            width: 960px;
+        }
+        .dh_left li{
+            display: block;
+            float: left;
+        }
+        .dh_left li span a{
+            color: #ffffff;
+            font-size: 14px;
+            font-family: '微软雅黑','黑体',Arial;
+            display: block;
+            padding:10px;
+        }
+        .mm{
+            background: url("http://www.7006.top/style/css/imga/r2_c4.jpg") no-repeat right center;
+            border:0;
+            color: #fff;
+            padding-right:15px !important;
+        }
+        .more{
+            position: relative;
+        }
+        .more_hide{
+            width:80px;
+            position: absolute;
+            border:1px solid #00AA98;
+            background: none repeat scroll 0 0 #f2f2f2;
+            left:0;
+            overflow: hidden;
+            top: 36px;
+            z-index:9999;
+        }
+        .more_hide ul li{
+            display: block;
+            line-height: 30px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            width: 80px;
+        }
+        .more_hide ul li a {
+            color: black;
+            font-size: 14px;
+            font-family: '微软雅黑', '黑体', Arial;
+            display: block;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="all">
+        <div class="daohang">
+            <div class="dh">
+                <ul class="dh_left">
+                    <li><span><a href="">科讯网</a></span></li>
+                    <li><span><a href="">业界</a></span></li>
+                    <li><span><a href="">手机</a></span></li>
+                    <li><span><a href="">家电</a></span></li>
+                    <li><span><a href="">手游</a></span></li>
+                    <li><span><a href="">运营</a></span></li>
+                    <li><span><a href="">即时</a></span></li>
+                    <li class="more">
+                        <span><a href="" class="mm">更多</a></span>
+                        <div style="display: block" class="more_hide">
+                            <ul>
+                                <li><a href="">滚动新闻</a></li>
+                                <li><a href="">聚合标签</a></li>
+                                <li><a href="">排行榜</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="dh_right">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
